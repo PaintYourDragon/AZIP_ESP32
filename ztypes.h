@@ -51,7 +51,8 @@
 #define DEFAULT_ROWS  2         /* Default screen height */
 #define DEFAULT_COLS 40         /* Deafult screen width */
 
-#define RANDOM_FUNC  esp_random
+//#define RANDOM_FUNC  esp_random
+#define RANDOM_FUNC  random
 #define SRANDOM_FUNC randomSeed //srandom
 
 #define MEMORY_FILE_NAME "MEMORY.DAT"

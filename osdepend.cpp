@@ -41,9 +41,14 @@
 
 #include "ztypes.h"
 
+#include <PicoDVI.h>
+extern DVItext1 display; // In azip_esp32.ino
+// Those'll go in ztypes file eventually
 
 void fatal( void )
 {
     Serial.println("Fatal");
-    exit( 1 );
+    display.println("Fatal");
+    for (;;) yield();
+//    exit( 1 );
 }                               /* fatal */
