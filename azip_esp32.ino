@@ -93,14 +93,18 @@ void setup()
 
   // open story
   slowPrintf("Loading Game....");
+pinMode(LED_BUILTIN, OUTPUT);
+// Totally crashing hard & bad here:
   open_story(gameFileName);
 
+#if 0
   // put your setup code here, to run once:
   configure( V1, V8 );
 
   initialize_screen(  );
 
   z_restart(  );
+#endif
 
 #if 0
   Terminal.write("\e[40;97m"); // background: black, foreground: white
@@ -111,11 +115,13 @@ void setup()
 
 void loop()
 {
+digitalWrite(LED_BUILTIN, (millis() / 1000) & 1);
+return;
   // put your main code here, to run repeatedly:
   interpret( );
   // if we got to here the system was halted by Quit - we restart to allow choosing of new game. 
 //  ESP.restart();
-watchdog_reboot(0, 0, 0);
+//watchdog_reboot(0, 0, 0);
 }
 
 

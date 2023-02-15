@@ -62,6 +62,7 @@ void open_story( char * game_name )
     char memory_name[] = MEMORY_FILE_NAME;
     //char * game_name = "GAME.DAT";
 
+// Crashing & burning here somewhere
     if ( game.open( memory_name, O_RDWR | O_CREAT ) )
     {
         game.truncate(0);
@@ -69,6 +70,7 @@ void open_story( char * game_name )
     }
     else
     {
+return;
         goto FATAL;
     }
 
